@@ -1,0 +1,35 @@
+{
+  "assetId": "replace_me",
+  "displayName": "",
+  "version": "v001",
+  "target": "game-or-dashboard-or-shared",
+  "category": "",
+  "status": "incoming",
+  "creator": "",
+  "sourceUrl": "",
+  "createdWith": "",
+  "adobeProjectUrl": "",
+  "generationDetails": {
+    "model": "",
+    "prompt": "",
+    "referenceFiles": []
+  },
+  "licence": {
+    "name": "unreviewed",
+    "evidencePath": "",
+    "attribution": ""
+  },
+  "dimensions": {
+    "width": null,
+    "height": null
+  },
+  "audio": {
+    "sampleRate": null,
+    "channels": null,
+    "durationSeconds": null,
+    "loopStart": null,
+    "loopEnd": null
+  },
+  "dependencies": [],
+  "notes": ""
+}

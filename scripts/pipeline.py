@@ -12,6 +12,7 @@ import zipfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parents[1]
+ACTIVE_COLLECTION = None
 EXTENSIONS = {
  'textures': '.png .jpg .jpeg .webp .tga .tif .tiff .bmp .psd .psb .dds .ktx2',
  'models': '.fbx .obj .gltf .glb .blend .bin .mtl',
@@ -163,13 +164,14 @@ def sync(args):
   selected.append((src,dest,{'id':id,'version':e['version'],'source':e['path'],'file':dest.relative_to(project).as_posix(),'sha256':e['sha256'],'bytes':e['bytes'],'licence':e['licence']}))
  if total>config()['budgets'][args.target]['totalBytes']: raise ValueError('Selection exceeds target total-byte budget')
  for src,dest,e in selected: copy_verified(src,dest,e['sha256'])
- write(manifest,{'schemaVersion':1,'target':args.target,'totalBytes':total,'assets':[e for _,_,e in selected]})
+ write(manifest,{'schemaVersion':1,'collection':ACTIVE_COLLECTION,'target':args.target,'totalBytes':total,'assets':[e for _,_,e in selected]})
  print(f'Synced {len(selected)} selected exports ({total} bytes). Lock: {manifest}\nPrevious unselected cached files are retained; only the lock lists this selection.')
 
 def rehydrate(args):
  project=Path(args.project).resolve()
  manifest=safe(project,'public/data/assets.lock.json' if args.target=='dashboard' else 'assets/assets.lock.json')
  data=read(manifest)
+ if data.get('collection')!=ACTIVE_COLLECTION: raise ValueError('Lock belongs to another collection; select its matching --collection option')
  if data.get('schemaVersion')!=1 or data.get('target')!=args.target: raise ValueError('Lock version or target mismatch')
  output='public/assets/runtime/' if args.target=='dashboard' else 'assets/runtime/'
  selected=[];total=0;seen=set();cfg=config()['budgets'][args.target]
@@ -204,8 +206,14 @@ def verify(args):
  print(f"Verified {len(ids)} assets and their exports")
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='command',required=True)
- a=s.add_parser('ingest',help='Copy one source into archive and catalogue');a.add_argument('file');a.add_argument('--category',choices=list(EXTENSIONS));a.add_argument('--name');a.add_argument('--tags',nargs='*');a.add_argument('--licence');a.add_argument('--provenance');a.set_defaults(func=ingest)
+ global ROOT, ACTIVE_COLLECTION
+ bootstrap=argparse.ArgumentParser(add_help=False)
+ bootstrap.add_argument('--collection',choices=['retro-game-assets'],help='Use the dedicated retro game asset collection (place before the command)')
+ selected,_=bootstrap.parse_known_args()
+ if selected.collection:
+  ROOT=safe(ROOT,selected.collection);ACTIVE_COLLECTION=selected.collection
+ p=argparse.ArgumentParser(description=__doc__,parents=[bootstrap]);s=p.add_subparsers(dest='command',required=True)
+ a=s.add_parser('ingest',help='Copy one source into archive and catalogue');a.add_argument('file');a.add_argument('--category',choices=list(config()['categories']));a.add_argument('--name');a.add_argument('--tags',nargs='*');a.add_argument('--licence');a.add_argument('--provenance');a.set_defaults(func=ingest)
  a=s.add_parser('unpack',help='Validate and extract a ZIP to ignored staging');a.add_argument('file');a.set_defaults(func=unpack)
  a=s.add_parser('promote',help='Register an already optimised runtime export');a.add_argument('id');a.add_argument('file');a.add_argument('--target',choices=RUNTIME,required=True);a.add_argument('--licence');a.set_defaults(func=promote)
  a=s.add_parser('sync',help='Copy only selected exports and write a lock manifest');a.add_argument('--target',choices=RUNTIME,required=True);a.add_argument('--project',required=True);a.add_argument('--ids',nargs='+',required=True);a.set_defaults(func=sync)

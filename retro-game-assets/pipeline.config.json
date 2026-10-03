@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "categories": {
+    "textures": "sources/textures",
+    "models": "sources/models",
+    "shaders": "sources/shaders",
+    "audio": "sources/audio",
+    "hdri": "sources/hdri",
+    "sprites": "sources/sprites",
+    "animations": "sources/animations",
+    "backgrounds": "sources/backgrounds",
+    "blueprints": "sources/blueprints",
+    "text": "sources/text",
+    "fonts": "sources/fonts",
+    "references": "sources/references",
+    "scenes": "sources/scenes",
+    "materials": "sources/materials",
+    "vfx": "sources/vfx",
+    "ui": "sources/ui",
+    "packages": "archives/original-packages",
+    "editable": "sources/editable",
+    "dashboard-backgrounds": "sources/dashboard/backgrounds",
+    "dashboard-animations": "sources/dashboard/animations",
+    "dashboard-ui": "sources/dashboard/ui",
+    "dashboard-branding": "sources/dashboard/branding",
+    "dashboard-audio": "sources/dashboard/audio"
+  },
+  "budgets": {
+    "dashboard": {
+      "fileBytes": 8388608,
+      "totalBytes": 33554432
+    },
+    "game": {
+      "fileBytes": 33554432,
+      "totalBytes": 209715200
+    }
+  }
+}

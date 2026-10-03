@@ -1,0 +1,8 @@
+# Reproducible local working copies; keep durable editable masters in sources/editable.
+working/**
+!working/game/
+!working/game/.gitkeep
+!working/dashboard/
+!working/dashboard/.gitkeep
+staging/**
+!staging/.gitkeep

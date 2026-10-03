@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "assetId": "replace_with_scene_id",
+  "version": 1,
+  "status": "template",
+  "targets": [
+    "dashboard",
+    "game"
+  ],
+  "canvas": {
+    "width": null,
+    "height": null
+  },
+  "base": "base/base-scene.png",
+  "overlays": [
+    "overlays/frame-01.png",
+    "overlays/frame-02.png",
+    "overlays/frame-03.png",
+    "overlays/frame-04.png"
+  ],
+  "playback": {
+    "frameDurationMs": 140,
+    "loop": true,
+    "composite": "base-plus-current-overlay",
+    "reducedMotion": "base-only",
+    "pauseWhenHidden": true
+  },
+  "colourSpace": "sRGB",
+  "overlayAlpha": "transparent",
+  "audio": [],
+  "provenanceRecord": "metadata/provenance.json"
+}

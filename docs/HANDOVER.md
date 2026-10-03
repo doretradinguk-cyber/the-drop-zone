@@ -35,3 +35,7 @@ The owning doretradinguk-cyber account is connected with write access. This deli
 ## Runtime cautions
 
 The dashboard does not upload/archive through its browser UI; use the Drop Zone Python scripts and GitHub Desktop. Prepared exports require manual optimisation in an editor. LFS uses account storage/bandwidth. Tool links need running/hosted addresses. Runtime caches are ignored, so builds must rehydrate their locks and package only the selected files. The development server is local-only by default.
+
+## Retro game asset collection — 3 October 2026
+
+Added retro-game-assets as a self-contained collection for the game and dashboard. See its README for folder roles, archive/edit/review/export method and layered base-PNG plus overlay-frame template. CLI collection selection is additive; unqualified root commands keep their existing behaviour. Locks identify their source collection and rehydrate rejects the wrong collection. No existing assets moved and no actual scene art created in this task.

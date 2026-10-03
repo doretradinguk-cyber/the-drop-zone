@@ -2,6 +2,10 @@
 
 Central source archive for Seumas & Lewis. The dashboard, game and tools stay separate; only reviewed, selected runtime exports enter their builds.
 
+## Retro game and dashboard collection
+
+Use [`retro-game-assets/`](retro-game-assets/README.md) for the dedicated game/dashboard asset structure, editable masters, layered PNG scene template and collection-specific catalogue/exports. Run the existing script with `--collection retro-game-assets` before the command to select it. Existing root archives are preserved.
+
 ## Folder contract
 
 | Folder | Purpose |
