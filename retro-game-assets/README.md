@@ -75,3 +75,7 @@ Runtime formats remain deliberately limited to self-contained images, audio, fon
 Fetch/Pull this structure first in GitHub Desktop. Ensure `git lfs install` has been run before staging large files. Repository LFS rules cover images, meshes, audio, archives and common Adobe/native project formats, including uppercase extensions. Keep JSON, Markdown, SVG and shader source as reviewable text. Cloud Adobe projects should have a project URL in metadata plus a portable export; an online link alone is not an archive.
 
 All folders are tracked with .gitkeep or README files so they appear after cloning. No artwork/audio has been generated, moved or imported in this structure commit. The catalogue is intentionally empty. Git LFS quotas and root repository visibility still apply.
+
+## Godot 4 game contract
+
+All active gameplay code is GDScript in retro-wave-game, whose root project.godot loads scenes/resources from res:// paths. `sources/godot/` stores reference handoffs only; `metadata/godot/` records version/dependency/import notes. Approved PNG/WebP/audio/GLB exports still use the existing game target. Godot scripts/scenes/shaders/resources are integrated by reviewed source commits, not automatic asset copying. Editable source files and dashboard artwork retain their existing organisation.

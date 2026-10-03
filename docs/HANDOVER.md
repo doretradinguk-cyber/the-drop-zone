@@ -39,3 +39,7 @@ The dashboard does not upload/archive through its browser UI; use the Drop Zone 
 ## Retro game asset collection — 3 October 2026
 
 Added retro-game-assets as a self-contained collection for the game and dashboard. See its README for folder roles, archive/edit/review/export method and layered base-PNG plus overlay-frame template. CLI collection selection is additive; unqualified root commands keep their existing behaviour. Locks identify their source collection and rehydrate rejects the wrong collection. No existing assets moved and no actual scene art created in this task.
+
+## Godot alignment — 3 October 2026
+
+Godot 4/GDScript is confirmed for the game. Added reference-only Godot scene/script/resource/shader/addon/import handoff folders under retro-game-assets; active game code remains in retro-wave-game. Prepared asset formats and pipeline commands are unchanged; project root assets/runtime paths remain compatible. See sources/godot/README.md.

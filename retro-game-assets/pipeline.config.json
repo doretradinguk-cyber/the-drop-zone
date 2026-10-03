@@ -23,7 +23,8 @@
     "dashboard-animations": "sources/dashboard/animations",
     "dashboard-ui": "sources/dashboard/ui",
     "dashboard-branding": "sources/dashboard/branding",
-    "dashboard-audio": "sources/dashboard/audio"
+    "dashboard-audio": "sources/dashboard/audio",
+    "godot-reference": "sources/godot"
   },
   "budgets": {
     "dashboard": {
