@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "categories": {
+    "textures": "\ud83c\udfa8 Textures",
+    "models": "\ud83d\udcd0 Models",
+    "shaders": "\ud83c\udfac Shaders",
+    "audio": "\ud83c\udfb5 Audio",
+    "hdri": "\ud83c\udf0c HDRI",
+    "sprites": "Sprites",
+    "animations": "Animations",
+    "backgrounds": "Backgrounds",
+    "blueprints": "Blueprints",
+    "text": "Text",
+    "fonts": "Fonts",
+    "references": "References",
+    "packages": "Archives"
+  },
+  "budgets": {
+    "dashboard": {
+      "fileBytes": 8388608,
+      "totalBytes": 33554432
+    },
+    "game": {
+      "fileBytes": 33554432,
+      "totalBytes": 209715200
+    }
+  }
+}
