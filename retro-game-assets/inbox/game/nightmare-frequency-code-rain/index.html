@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nightmare Frequency Overlay Test</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="stage" aria-label="Nightmare Frequency animation test">
+    <div class="placeholder">Drop any scene background behind this effect</div>
+    <img id="rainA" class="fx fx-a" src="assets/nightmare-rain-01.png" alt="" />
+    <img id="rainB" class="fx fx-b" src="assets/nightmare-rain-02.png" alt="" />
+    <div class="scanlines"></div>
+    <div class="pulse"></div>
+    <div class="controls">
+      <button id="toggle">Deactivate Nightmare Frequency</button>
+      <label>Intensity <input id="intensity" type="range" min="0" max="100" value="65" /></label>
+      <label>Speed <input id="speed" type="range" min="80" max="600" value="220" /></label>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
