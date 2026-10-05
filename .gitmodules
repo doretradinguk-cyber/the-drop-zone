@@ -1,0 +1,12 @@
+[submodule "retro-game-assets/source-packs/kaykit/Dungeon-Remastered"]
+	path = retro-game-assets/source-packs/kaykit/Dungeon-Remastered
+	url = https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0.git
+[submodule "retro-game-assets/source-packs/kaykit/Furniture-Bits"]
+	path = retro-game-assets/source-packs/kaykit/Furniture-Bits
+	url = https://github.com/KayKit-Game-Assets/KayKit-Furniture-Bits-1.0.git
+[submodule "retro-game-assets/source-packs/kaykit/Restaurant-Bits"]
+	path = retro-game-assets/source-packs/kaykit/Restaurant-Bits
+	url = https://github.com/KayKit-Game-Assets/KayKit-Restaurant-Bits-1.0.git
+[submodule "retro-game-assets/source-packs/kaykit/Prototype-Bits"]
+	path = retro-game-assets/source-packs/kaykit/Prototype-Bits
+	url = https://github.com/KayKit-Game-Assets/KayKit-Prototype-Bits-1.0.git
